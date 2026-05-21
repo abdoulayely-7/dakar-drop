@@ -1,11 +1,14 @@
 package inventory.domain.entity;
 
+import java.util.UUID;
+
 import inventory.domain.valueobject.Money;
 import inventory.domain.valueobject.SKU;
 import inventory.domain.exception.InsufficientStockException;
 
 public class Product {
 
+    private final UUID id;
     private final SKU sku;
     private String name;
     private String description;
@@ -24,6 +27,7 @@ public class Product {
             throw new IllegalArgumentException("Stock initial invalide");
         }
 
+        this.id = UUID.randomUUID();
         this.sku = sku;
         this.name = name;
         this.description = description;
@@ -63,6 +67,10 @@ public class Product {
     }
 
     // -------- GETTERS UNIQUEMENT --------
+
+    public UUID id() {
+        return id;
+    }
 
     public SKU sku() {
         return sku;
