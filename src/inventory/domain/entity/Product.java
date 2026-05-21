@@ -66,8 +66,6 @@ public class Product {
         return this.stock < 5;
     }
 
-    // -------- GETTERS UNIQUEMENT --------
-
     public UUID id() {
         return id;
     }
